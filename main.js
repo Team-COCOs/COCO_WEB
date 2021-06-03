@@ -140,7 +140,7 @@ $.ajax({
             "password": "1234"
            },
     success: function(response){
-        var nickname = response.username;
+        var nickname = response.nickname;
         $(document).ready(function() {
             $('.name').html(nickname);
         });

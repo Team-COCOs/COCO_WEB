@@ -1,3 +1,9 @@
+if(typeof jQuery == 'undefined'){
+    alert("없음");
+} else{
+    alert("있음");
+}
+
 function logincheck(){
     var userID = $('input[name=".id"]').val();
     var pwd = $('input[name=".pw"]').val();

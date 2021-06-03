@@ -1,4 +1,4 @@
-$(document).ready(function logincheck(){
+function logincheck(){
     var userID = $('input[name=".id"]').val();
     var pw = $('input[name=".pw"]').val();
     var saveIDCheck = $('checkbox:checked').val();
@@ -33,7 +33,7 @@ $(document).ready(function logincheck(){
             alert("알 수 없는 에러 [" + error + "]");
         }                   
     });
-});
+}
 
 
 

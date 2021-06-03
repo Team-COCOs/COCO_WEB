@@ -1,4 +1,4 @@
-$document.ready(function logincheck(){
+$(document).ready(function logincheck(){
     var userID = $('input[name=".id"]').val();
     var pwd = $('input[name=".pw"]').val();
     var saveIDCheck = $('checkbox:checked').val();

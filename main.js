@@ -136,7 +136,7 @@ function getChart(){
 
 $.ajax({
     async: false,
-    url: "http://172.30.1.6:8000/account/signup/",
+    url: "http://172.30.1.40:8000/account/signup/",
     type: "GET",
     datatype: "json",
     success: function(response){

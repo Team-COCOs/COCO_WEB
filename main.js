@@ -142,7 +142,7 @@ $.ajax({
     success: function(response){
         var nickname = response.username;
         $(document).ready(function() {
-            $('.name').html(nickname);
+            $('.name').html(username);
         });
     },
     error: function(jqXHR, textStatus, errorThrown){

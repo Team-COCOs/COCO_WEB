@@ -7,6 +7,7 @@ var data = {
 };
 
 for(var i=0;i<12;i++){
+    arrCount[i] = new data;
     if(i<4){arrCount[i].hour=20+i;}
     else{arrCount[i].hour=i-4;}
 }

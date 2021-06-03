@@ -33,7 +33,8 @@ function drawChart() {
                 chartTime=20; 
                 for(var i=0;i<history.acc.length;i++){
                     //json 배열에서 가져온 뒤척임 시간 2자리(00-23)로 표현
-                    var curA = new Date(history.acc[i].sleeptime);
+                    //var curA = new Date(history.acc[i].sleeptime);
+                    var curA = history.acc[i].sleeptime;
                     var cutA = ("0"+curA.getHours()).slice(-2);//가공된시간
 
                     if(chartTime==cutA){
@@ -45,7 +46,8 @@ function drawChart() {
                 chartTime=20;
                 for(var i=0;i<history.sound.length;i++){
                     //json 배열에서 가져온 코골이 시간 2자리(00-23)로 표현
-                    var curS = new Date(history.sound[i].sleeptime);
+                    //var curS = new Date(history.sound[i].sleeptime);
+                    var curS = history.sound[i].sleeptime;
                     var cutS = ("0"+curS.getHours()).slice(-2);//가공된시간
 
                     if(chartTime==cutS){

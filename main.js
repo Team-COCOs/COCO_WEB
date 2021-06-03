@@ -72,47 +72,74 @@ $(document).ready(function(){
             for(var i=0; i<sound.length;i++){
                 curTime = sound[i].sleeptime;
                 cutTime=curTime.substring(12,14);            
-                switch(cutTime){
-                    case 20:
-                        arrCount[0].numSound+=sound[i].count;
-                        break;
-                    case 21:
-                        arrCount[1].numSound+=sound[i].count;
-                        break;
-                    case 22:
-                        arrCount[2].numSound+=sound[i].count;
-                        break;
-                    case 23:
-                        arrCount[3].numSound+=sound[i].count;
-                        break;
-                    case 00:
-                        arrCount[4].numSound+=sound[i].count;
-                        break;
-                    case 01:
-                        arrCount[5].numSound+=sound[i].count;
-                        break;
-                    case 02:
-                        arrCount[6].numSound+=sound[i].count;
-                        break;
-                    case 03:
-                        arrCount[7].numSound+=sound[i].count;
-                        break;
-                    case 04:
-                        arrCount[8].numSound+=sound[i].count;
-                        break;
-                    case 05:
-                        arrCount[9].numSound+=sound[i].count;
-                        break;
-                    case 06:
-                        arrCount[10].numSound+=sound[i].count;
-                        break;
-                    case 07:
-                        arrCount[11].numSound+=sound[i].count;
-                        break;
-                    case 08:
-                        arrCount[12].numSound+=sound[i].count;
-                        break;
-                    }
+//                 switch(cutTime){
+//                     case 20:
+//                         arrCount[0].numSound+=sound[i].count;
+//                         break;
+//                     case 21:
+//                         arrCount[1].numSound+=sound[i].count;
+//                         break;
+//                     case 22:
+//                         arrCount[2].numSound+=sound[i].count;
+//                         break;
+//                     case 23:
+//                         arrCount[3].numSound+=sound[i].count;
+//                         break;
+//                     case 00:
+//                         arrCount[4].numSound+=sound[i].count;
+//                         break;
+//                     case 01:
+//                         arrCount[5].numSound+=sound[i].count;
+//                         break;
+//                     case 02:
+//                         arrCount[6].numSound+=sound[i].count;
+//                         break;
+//                     case 03:
+//                         arrCount[7].numSound+=sound[i].count;
+//                         break;
+//                     case 04:
+//                         arrCount[8].numSound+=sound[i].count;
+//                         break;
+//                     case 05:
+//                         arrCount[9].numSound+=sound[i].count;
+//                         break;
+//                     case 06:
+//                         arrCount[10].numSound+=sound[i].count;
+//                         break;
+//                     case 07:
+//                         arrCount[11].numSound+=sound[i].count;
+//                         break;
+//                     case 08:
+//                         arrCount[12].numSound+=sound[i].count;
+//                         break;
+//                     }
+                if(cutTime=='20'){
+                    arrCount[0].numSound+=sound[i].count;
+                }else if(cutTime=='21'){
+                    arrCount[1].numSound+=sound[i].count;
+                }else if(cutTime=='22'){
+                    arrCount[2].numSound+=sound[i].count;
+                }else if(cutTime=='23'){
+                    arrCount[3].numSound+=sound[i].count;
+                }else if(cutTime=='00'){
+                    arrCount[4].numSound+=sound[i].count;
+                }else if(cutTime=='01'){
+                    arrCount[5].numSound+=sound[i].count;
+                }else if(cutTime=='02'){
+                    arrCount[6].numSound+=sound[i].count;
+                }else if(cutTime=='03'){
+                    arrCount[7].numSound+=sound[i].count;
+                }else if(cutTime=='04'){
+                    arrCount[8].numSound+=sound[i].count;
+                }else if(cutTime=='05'){
+                    arrCount[9].numSound+=sound[i].count;
+                }else if(cutTime=='06'){
+                    arrCount[10].numSound+=sound[i].count;
+                }else if(cutTime=='07'){
+                    arrCount[11].numSound+=sound[i].count;
+                }else if(cutTime=='08'){
+                    arrCount[12].numSound+=sound[i].count;
+                }
             }
         },
         error: function(jqXHR, textStatus, errorThrown){

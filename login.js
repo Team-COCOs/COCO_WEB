@@ -18,7 +18,7 @@ function logincheck(){
 
     $.ajax({
         type : "POST",                               
-        url : "http://172.30.1.6:8000/account/signup/",                          
+        url : "http://172.30.1.40:8000/account/signup/",                          
         contentType : 'application/json',            
         data : JSON.stringify(loginData),                 
         success : function(result){

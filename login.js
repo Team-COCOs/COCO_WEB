@@ -18,7 +18,7 @@ function logincheck(){
 
     $.ajax({
         type : "POST",                               
-        url : "http://127.0.0.1:8000/account/signup/",                          
+        url : "http://127.0.0.1:8000/account/signin/",                          
         contentType : 'application/json',            
         data : JSON.stringify(loginData),  
         timeout: 30000,

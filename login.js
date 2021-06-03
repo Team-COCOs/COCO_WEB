@@ -27,9 +27,17 @@ function logincheck(){
             "password": pw
         },
         timeout: 30000,
-        success : function(result)
-            window.location.href = 'https://team-cocos.github.io/COCO_WEB/index.html';
-        },                       
+        success : function(result){
+            if(result == 401){
+                alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+                return false;
+            } else if(result==403) {
+                alert("403 Error!");
+                return false;
+            }else {
+                window.location.href = 'https://team-cocos.github.io/COCO_WEB/index.html';
+            }
+        },                     
         error   : function(jqXHR, status, error){
             alert("알 수 없는 에러 [" + error + "]");
         }                   

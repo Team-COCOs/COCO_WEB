@@ -1,10 +1,4 @@
-if(typeof jQuery == 'undefined'){
-    alert("없음");
-} else{
-    alert("있음");
-}
-
-function logincheck(){
+$document.ready(function logincheck(){
     var userID = $('input[name=".id"]').val();
     var pwd = $('input[name=".pw"]').val();
     var saveIDCheck = $('checkbox:checked').val();
@@ -39,7 +33,7 @@ function logincheck(){
             alert("알 수 없는 에러 [" + error + "]");
         }                   
     });
-}
+});
 
 
 

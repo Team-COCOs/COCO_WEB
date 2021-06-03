@@ -21,6 +21,9 @@ function logincheck(){
         url : "http://127.0.0.1:8000/account/signin/\"TOKEN f6dd4237868c1175cb095356e7ce4686f6ddc9ce\"",                          
         contentType : 'application/json',            
 //         data : JSON.stringify(loginData),  
+        beforeSend : function(xhr){
+            xhr.setRequestHeader("TOKEN", "f6dd4237868c1175cb095356e7ce4686f6ddc9ce");
+        },
         data: {
             "email": userID,
             "password": pw

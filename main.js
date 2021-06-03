@@ -25,6 +25,7 @@ $(document).ready(function(){
             for(var i=0; i<acc.length;i++){
                 curTime = acc[i].sleeptime;
                 cutTime=curTime.substring(12,14);
+                arlert(cutTime);
                 switch(cutTime){
                     case 20:
                         arrCount[0].numAcc+=acc[i].count;

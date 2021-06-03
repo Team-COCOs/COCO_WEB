@@ -18,7 +18,7 @@ function logincheck(){
 
     $.ajax({
         type : "POST",                               
-        url : "http://172.30.1.6/account/signup/",                          
+        url : "http://172.30.1.6:8000/account/signup/",                          
         contentType : 'application/json',            
         data : JSON.stringify(loginData),                 
         success : function(result){
@@ -26,7 +26,7 @@ function logincheck(){
                 alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
                 return false;
             } else {
-                window.location.href = 'main.html';
+                window.location.href = 'index.html';
             }
         },                       
         error   : function(jqXHR, status, error){

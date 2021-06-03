@@ -128,19 +128,19 @@ $(document).ready(function(){
 function drawChart(){
     var data = new google.visualization.arrayToDataTable([
         ['시간', '뒤척임', '코골이'],
-        [arrCount[0].hour, arrCount[0].numAcc, arrCount[0].numSound],
-        [arrCount[1].hour, arrCount[1].numAcc, arrCount[1].numSound],
-        [arrCount[2].hour, arrCount[2].numAcc, arrCount[2].numSound],
-        [arrCount[3].hour, arrCount[3].numAcc, arrCount[3].numSound],
-        [arrCount[4].hour, arrCount[4].numAcc, arrCount[4].numSound],
-        [arrCount[5].hour, arrCount[5].numAcc, arrCount[5].numSound],
-        [arrCount[6].hour, arrCount[6].numAcc, arrCount[6].numSound],
-        [arrCount[7].hour, arrCount[7].numAcc, arrCount[7].numSound],
-        [arrCount[8].hour, arrCount[8].numAcc, arrCount[8].numSound],
-        [arrCount[9].hour, arrCount[9].numAcc, arrCount[9].numSound],
-        [arrCount[10].hour, arrCount[10].numAcc, arrCount[10].numSound],
-        [arrCount[11].hour, arrCount[11].numAcc, arrCount[11].numSound],
-        [arrCount[12].hour, arrCount[12].numAcc, arrCount[12].numSound],
+        [String(arrCount[0].hour), arrCount[0].numAcc, arrCount[0].numSound],
+        [String(arrCount[1].hour), arrCount[1].numAcc, arrCount[1].numSound],
+        [String(arrCount[2].hour), arrCount[2].numAcc, arrCount[2].numSound],
+        [String(arrCount[3].hour), arrCount[3].numAcc, arrCount[3].numSound],
+        [String(arrCount[4].hour), arrCount[4].numAcc, arrCount[4].numSound],
+        [String(arrCount[5].hour), arrCount[5].numAcc, arrCount[5].numSound],
+        [String(arrCount[6].hour), arrCount[6].numAcc, arrCount[6].numSound],
+        [String(arrCount[7].hour), arrCount[7].numAcc, arrCount[7].numSound],
+        [String(arrCount[8].hour), arrCount[8].numAcc, arrCount[8].numSound],
+        [String(arrCount[9].hour), arrCount[9].numAcc, arrCount[9].numSound],
+        [String(arrCount[10].hour), arrCount[10].numAcc, arrCount[10].numSound],
+        [String(arrCount[11].hour), arrCount[11].numAcc, arrCount[11].numSound],
+        [String(arrCount[12].hour), arrCount[12].numAcc, arrCount[12].numSound],
     ]);
 
     var options = {

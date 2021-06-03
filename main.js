@@ -141,8 +141,10 @@ $.ajax({
            },
     success: function(response){
         var nickname = response.nickname;
+        var birth_date = response.birth_date;
         $(document).ready(function() {
             $('.name').html(nickname);
+            $('.birth').html(birth_date);
         });
     },
     error: function(jqXHR, textStatus, errorThrown){

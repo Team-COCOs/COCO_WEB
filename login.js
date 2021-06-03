@@ -20,7 +20,8 @@ function logincheck(){
         type : "POST",                               
         url : "http://172.30.1.40:8000/account/signup/",                          
         contentType : 'application/json',            
-        data : JSON.stringify(loginData),                 
+        data : JSON.stringify(loginData),  
+        timeout: 30000,
         success : function(result){
             if(result == 401){
                 alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");

@@ -170,7 +170,7 @@ $.ajax({
         });
     },
     error: function(jqXHR, textStatus, errorThrown){
-        var score = 0
+        var score = 0;
         $(document).ready(function() {
             $('.score_div').html(score+"점");
         });

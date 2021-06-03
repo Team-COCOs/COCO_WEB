@@ -94,7 +94,6 @@ function drawChart() {
             }
         },
         error:function(request,status,error){
-            alert("code:"+request.status + " message = " + request.responseText + " error = " + error);
             var data = new google.visualization.arrayToDataTable([
                 ['시간', '뒤척임', '코골이'],
                 ['8PM', 1, 3], 

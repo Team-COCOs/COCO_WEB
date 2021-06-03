@@ -72,7 +72,7 @@ $(document).ready(function(){
             for(var i=0; i<sound.length;i++){
                 curTime = sound[i].sleeptime;
                 cutTime=curTime.substring(12,14);
-                consol.log(cutTime);
+                console.log(cutTime);
 //                 switch(cutTime){
 //                     case 20:
 //                         arrCount[0].numSound+=sound[i].count;

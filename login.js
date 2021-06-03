@@ -14,7 +14,7 @@ $(document).ready(function logincheck(){
         localStorage.setItem("saveID", 'N');
     }
 
-    var loginData = {"email":userID, "password":pwd};
+    var loginData = {"email":userID, "password":pw};
 
     $.ajax({
         type : "POST",                               

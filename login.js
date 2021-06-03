@@ -17,9 +17,10 @@ function logincheck(){
 //     var loginData = {"email":userID, "password":pw};
 
     $.ajax({
-        type : "POST",                               
+        async: false,
         url : "http://127.0.0.1:8000/account/signin/",                          
-        contentType : 'application/json',            
+        type : "POST",                               
+        contentType : 'json',            
 //         data : JSON.stringify(loginData),  
         data: {
             "email": userID,
@@ -42,8 +43,7 @@ function logincheck(){
         }                   
     });
 }
-
-
+});
 
 
 

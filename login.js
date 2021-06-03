@@ -14,13 +14,17 @@ function logincheck(){
         localStorage.setItem("saveID", 'N');
     }
 
-    var loginData = {"email":userID, "password":pw};
+//     var loginData = {"email":userID, "password":pw};
 
     $.ajax({
         type : "POST",                               
         url : "http://127.0.0.1:8000/account/signin/",                          
         contentType : 'application/json',            
-        data : JSON.stringify(loginData),  
+//         data : JSON.stringify(loginData),  
+        data: {
+            "email": userID,
+            "password": pw
+        },
         timeout: 30000,
         success : function(result){
             if(result == 401){

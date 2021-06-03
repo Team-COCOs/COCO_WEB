@@ -299,30 +299,30 @@ function getChart(){
 //     google.charts.setOnLoadCallback(drawChart);
 // }
 
-// $.ajax({
-//     async: false,
-//     url: "http://127.0.0.1:8000/account/signin/",
-//     type: "POST",
-//     datatype: "json",
-//     data: {
-//             "email": "abcd@gmail.com",
-//             "password": "1234"
-//            },
-//     success: function(response){
-//         var nickname = response.nickname;
-//         var birth_date = response.birth_date;
-//         $(document).ready(function() {
-//             $('.name').html(nickname);
-//             $('.birth').html(birth_date);
-//         });
-//     },
-//     error: function(jqXHR, textStatus, errorThrown){
-//         $(document).ready(function() {
-//             $('.name').html('안신영');
-//             $('.birth').html('1998.06.05');
-//         });
-//     }
-// });
+$.ajax({
+    async: false,
+    url: "http://127.0.0.1:8000/account/signin/",
+    type: "POST",
+    datatype: "json",
+    data: {
+            "email": "abcd@gmail.com",
+            "password": "1234"
+           },
+    success: function(response){
+        var nickname = response.nickname;
+        var birth_date = response.birth_date;
+        $(document).ready(function() {
+            $('.name').html(nickname);
+            $('.birth').html(birth_date);
+        });
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        $(document).ready(function() {
+            $('.name').html('안신영');
+            $('.birth').html('1998.06.05');
+        });
+    }
+});
 
 
 $.ajax({

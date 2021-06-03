@@ -7,6 +7,7 @@ function drawChart() {
         url:"http://127.0.0.1:8000/network/count/", //차트 API
         type: "GET",
         datatype:"json",
+        crossOrighin: true,
         success: function(response){
             if(response["result"] == "success"){
                 var history = response['history'];

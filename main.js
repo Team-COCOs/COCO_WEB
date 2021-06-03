@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 var arrCount = new Array(12);
 
-for(var i=0;i<12;i++){
+for(var i=0;i<13;i++){
     arrCount[i] = new Object();
     if(i<4){arrCount[i].hour=20+i;}
     else{arrCount[i].hour=i-4;}

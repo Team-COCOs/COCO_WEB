@@ -24,7 +24,7 @@ $(document).ready(function(){
             var cutTime;
             for(var i=0; i<acc.length;i++){
                 curTime = acc[i].sleeptime;
-                cutTime=curTime.substring(12,14);
+                cutTime=curTime.substring(11,13);
                 switch(cutTime){
                     case 20:
                         arrCount[0].numAcc+=acc[i].count;
@@ -71,7 +71,7 @@ $(document).ready(function(){
             var sound = response.sound;
             for(var i=0; i<sound.length;i++){
                 curTime = sound[i].sleeptime;
-                cutTime=curTime.substring(12,14);
+                cutTime=curTime.substring(11,13);
                 console.log(cutTime);
 //                 switch(cutTime){
 //                     case 20:

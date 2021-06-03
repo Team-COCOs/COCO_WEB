@@ -27,43 +27,43 @@ $(document).ready(function(){
                 cutTime=curTime.substring(12,14);
                 switch(cutTime){
                     case 20:
-                        arrCount[0].numAcc+acc[i].count;
+                        arrCount[0].numAcc+=acc[i].count;
                         break;
                     case 21:
-                        arrCount[1].numAcc+acc[i].count;
+                        arrCount[1].numAcc+=acc[i].count;
                         break;
                     case 22:
-                        arrCount[2].numAcc+acc[i].count;;
+                        arrCount[2].numAcc+=acc[i].count;;
                         break;
                     case 23:
-                        arrCount[3].numAcc+acc[i].count;
+                        arrCount[3].numAcc+=acc[i].count;
                         break;
                     case 00:
-                        arrCount[4].numAcc+acc[i].count;
+                        arrCount[4].numAcc+=acc[i].count;
                         break;
                     case 01:
-                        arrCount[5].numAcc+acc[i].count;
+                        arrCount[5].numAcc+=acc[i].count;
                         break;
                     case 02:
-                        arrCount[6].numAcc+acc[i].count;
+                        arrCount[6].numAcc+=acc[i].count;
                         break;
                     case 03:
-                        arrCount[7].numAcc+acc[i].count;
+                        arrCount[7].numAcc+=acc[i].count;
                         break;
                     case 04:
-                        arrCount[8].numAcc+acc[i].count;
+                        arrCount[8].numAcc+=acc[i].count;
                         break;
                     case 05:
-                        arrCount[9].numAcc+acc[i].count;
+                        arrCount[9].numAcc+=acc[i].count;
                         break;
                     case 06:
-                        arrCount[10].numAcc+acc[i].count;
+                        arrCount[10].numAcc+=acc[i].count;
                         break;
                     case 07:
-                        arrCount[11].numAcc+acc[i].count;
+                        arrCount[11].numAcc+=acc[i].count;
                         break;
                     case 08:
-                        arrCount[12].numAcc+acc[i].count;
+                        arrCount[12].numAcc+=acc[i].count;
                         break;
                     }
             }
@@ -74,43 +74,43 @@ $(document).ready(function(){
                 cutTime=curTime.substring(12,14);            
                 switch(cutTime){
                     case 20:
-                        arrCount[0].numSound+sound[i].count;
+                        arrCount[0].numSound+=sound[i].count;
                         break;
                     case 21:
-                        arrCount[1].numSound+sound[i].count;
+                        arrCount[1].numSound+=sound[i].count;
                         break;
                     case 22:
-                        arrCount[2].numSound+sound[i].count;
+                        arrCount[2].numSound+=sound[i].count;
                         break;
                     case 23:
-                        arrCount[3].numSound+sound[i].count;
+                        arrCount[3].numSound+=sound[i].count;
                         break;
                     case 00:
-                        arrCount[4].numSound+sound[i].count;
+                        arrCount[4].numSound+=sound[i].count;
                         break;
                     case 01:
-                        arrCount[5].numSound+sound[i].count;
+                        arrCount[5].numSound+=sound[i].count;
                         break;
                     case 02:
-                        arrCount[6].numSound+sound[i].count;
+                        arrCount[6].numSound+=sound[i].count;
                         break;
                     case 03:
-                        arrCount[7].numSound+sound[i].count;
+                        arrCount[7].numSound+=sound[i].count;
                         break;
                     case 04:
-                        arrCount[8].numSound+sound[i].count;
+                        arrCount[8].numSound+=sound[i].count;
                         break;
                     case 05:
-                        arrCount[9].numSound+sound[i].count;
+                        arrCount[9].numSound+=sound[i].count;
                         break;
                     case 06:
-                        arrCount[10].numSound+sound[i].count;
+                        arrCount[10].numSound+=sound[i].count;
                         break;
                     case 07:
-                        arrCount[11].numSound+sound[i].count;
+                        arrCount[11].numSound+=sound[i].count;
                         break;
                     case 08:
-                        arrCount[12].numSound+sound[i].count;
+                        arrCount[12].numSound+=sound[i].count;
                         break;
                     }
             }

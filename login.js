@@ -1,6 +1,6 @@
 function logincheck(){
-    var userID = $('input[name="id"]').val();
-    var pwd = $('input[name="pw"]').val();
+    var userID = $('input[name=".id"]').val();
+    var pwd = $('input[name=".pw"]').val();
     var saveIDCheck = $('checkbox:checked').val();
 
     // ID 기억하기 위해 localStorage 활용

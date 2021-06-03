@@ -1,6 +1,6 @@
-var arrCount = new Array(13);
+var arrCount = new Array(12);
 
-for(var i=0;i<13;i++){
+for(var i=0;i<12;i++){
     arrCount[i] = new Object();
     if(i<4){arrCount[i].hour=20+i;}
     else{arrCount[i].hour=i-4;}
@@ -15,96 +15,97 @@ $.ajax({
     datatype: "json",
     success: function(response){
         var acc = response.acc;
-        var cutTime;
         var curTime;
+        var cutTime;
         for(var i=0; i<acc.length;i++){
-            curTime = new Date(acc.sleeptime);
-            cutTime=("0"+curTime).slice(-2);
+            curTime = acc[i].sleeptime;
+            cutTime=curTime.substring(12,14);
             switch(cutTime){
                 case 20:
-                    arrCount[0].numAcc+acc.count;
+                    arrCount[0].numAcc+acc[i].count;
                     break;
                 case 21:
-                    arrCount[1].numAcc+acc.count;
+                    arrCount[1].numAcc+acc[i].count;
                     break;
                 case 22:
-                    arrCount[2].numAcc+acc.count;;
+                    arrCount[2].numAcc+acc[i].count;;
                     break;
                 case 23:
-                    arrCount[3].numAcc+acc.count;
+                    arrCount[3].numAcc+acc[i].count;
                     break;
                 case 00:
-                    arrCount[4].numAcc+acc.count;
+                    arrCount[4].numAcc+acc[i].count;
                     break;
                 case 01:
-                    arrCount[5].numAcc+acc.count;
+                    arrCount[5].numAcc+acc[i].count;
                     break;
                 case 02:
-                    arrCount[6].numAcc+acc.count;
+                    arrCount[6].numAcc+acc[i].count;
                     break;
                 case 03:
-                    arrCount[7].numAcc+acc.count;
+                    arrCount[7].numAcc+acc[i].count;
                     break;
                 case 04:
-                    arrCount[8].numAcc+acc.count;
+                    arrCount[8].numAcc+acc[i].count;
                     break;
                 case 05:
-                    arrCount[9].numAcc+acc.count;
+                    arrCount[9].numAcc+acc[i].count;
                     break;
                 case 06:
-                    arrCount[10].numAcc+acc.count;
+                    arrCount[10].numAcc+acc[i].count;
                     break;
                 case 07:
-                    arrCount[11].numAcc+acc.count;
+                    arrCount[11].numAcc+acc[i].count;
                     break;
                 case 08:
-                    arrCount[12].numAcc+acc.count;
+                    arrCount[12].numAcc+acc[i].count;
                     break;
                 }
         }
 
         var sound = response.sound;
         for(var i=0; i<sound.length;i++){
-            cutTime=("0"+sound.sleeptime.getHours()).slice(-2);
+            curTime = sound[i].sleeptime;
+            cutTime=curTime.substring(12,14);            
             switch(cutTime){
                 case 20:
-                    arrCount[0].numSound+sound.count;
+                    arrCount[0].numSound+sound[i].count;
                     break;
                 case 21:
-                    arrCount[1].numSound+sound.count;
+                    arrCount[1].numSound+sound[i].count;
                     break;
                 case 22:
-                    arrCount[2].numSound+sound.count;
+                    arrCount[2].numSound+sound[i].count;
                     break;
                 case 23:
-                    arrCount[3].numSound+sound.count;
+                    arrCount[3].numSound+sound[i].count;
                     break;
                 case 00:
-                    arrCount[4].numSound+sound.count;
+                    arrCount[4].numSound+sound[i].count;
                     break;
                 case 01:
-                    arrCount[5].numSound+sound.count;
+                    arrCount[5].numSound+sound[i].count;
                     break;
                 case 02:
-                    arrCount[6].numSound+sound.count;
+                    arrCount[6].numSound+sound[i].count;
                     break;
                 case 03:
-                    arrCount[7].numSound+sound.count;
+                    arrCount[7].numSound+sound[i].count;
                     break;
                 case 04:
-                    arrCount[8].numSound+sound.count;
+                    arrCount[8].numSound+sound[i].count;
                     break;
                 case 05:
-                    arrCount[9].numSound+sound.count;
+                    arrCount[9].numSound+sound[i].count;
                     break;
                 case 06:
-                    arrCount[10].numSound+sound.count;
+                    arrCount[10].numSound+sound[i].count;
                     break;
                 case 07:
-                    arrCount[11].numSound+sound.count;
+                    arrCount[11].numSound+sound[i].count;
                     break;
                 case 08:
-                    arrCount[12].numSound+sound.count;
+                    arrCount[12].numSound+sound[i].count;
                     break;
                 }
         }

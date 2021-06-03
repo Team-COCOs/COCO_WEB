@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>한눈에 보기</title>
+    <link rel="stylesheet" href="main.css" type="text/css"/>
+    <style type="text/css"></style>
+
+    <!-- JQuery-->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="main.js"></script>    
+</head>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.6.3/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <div class="wrapper">
+        <header><h1>coco</h1></header>
+        
+        <section>
+            <nav>
+                <div id="profile">
+                <center>
+                    <img class="face" src="pic/grandmom.png">
+                    <div class="name"></div>
+                    <div class="birth"></div>
+                </center>
+                </div>
+
+                <div id="menu">
+                    <ul>
+                        <center>
+                        <li><a class="active" href="main.html"><h2>한눈에 보기</h2></a></li>
+                        <li><a href="analyze.html"><h2>수면분석</h2></a></li>
+                        <li><a href="inquire.html"><h2>문의하기</h2></a></li>
+                        <li><a href="set.html"><h2>설정하기</h2></a></li>
+                        <li><a href="login.html"><h2>로그아웃</h2></a></li>
+                        </center>
+                    </ul>
+                </div>
+            </nav>
+
+            <main>
+                <div id="up">
+                    <div id="chart_div" style="width: 900px; height: 500px; margin: 10px;"></div>
+                </div>
+
+                <div id="down">
+                    <div id="score_box">
+                        <center>
+                             <h2>수면점수</h2>
+                            <div class="score_div"></div>
+                        </center>
+                    </div>
+
+                    <div class="notice"> 
+                        <div id="notice_box">
+                            <center>
+                                <h2>알림</h2>
+                                <ul>
+                                    <li><a href="analyze.html">윤금자 할머니의 문의글에 답변이 달렸어요!</a></li>
+                                    <li><a href="inquire.html">월간 건강레터</a></li>
+                                </ul>
+                            </center>
+                        </div>
+                        <div id="letter_box">
+                            <center>
+                                <h2>수면상식</h2>
+                                <ul>
+                                    <li><a href="dummy1.html">커피와 담배는 수면에 악영향을 준다</a></li>
+                                    <li><a href="dummy2.html">수면을 취하고 싶다면 형광등을 꺼야 한다</a></li> 
+                                </ul>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                
+            </main>
+        </section>
+    </div>
+</body>
+</html>

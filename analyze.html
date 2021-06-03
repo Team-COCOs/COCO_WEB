@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>수면분석</title>
+    <link rel="stylesheet" href="analyze.css" type="text/css"/>
+    <style type="text/css"></style>
+
+    <!-- JQuery-->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="analyze.js"></script>    
+</head>
+<body>
+    <div class="wrapper">
+        <header><h1>coco</h1></header>
+        
+        <section>
+            <nav>
+                <div id="profile">
+                <center>
+                    <img class="face" src="pic/grandmom.png">
+                    <div class="name"></div>
+                    <div class="birth"></div>
+                </center>
+                </div>
+
+                <div id="menu">
+                    <ul>
+                        <center>
+                        <li><a href="index.html"><h2>한눈에 보기</h2></a></li>
+                        <li><a class="active" href="analyze.html"><h2>수면분석</h2></a></li>
+                        <li><a href="inquire.html"><h2>문의하기</h2></a></li>
+                        <li><a href="set.html"><h2>설정하기</h2></a></li>
+                        <li><a href="login.html"><h2>로그아웃</h2></a></li>
+                        </center>
+                    </ul>
+                </div>
+            </nav>
+
+            <main>
+                <div id="up" style="width:100%; height: 50%; margin: 10px; background-color: white;">
+                    <img class="character" src="pic/man.png">
+                    <div id='text'>
+                        <div class="comment"></div>
+                        <div class="score"></div>
+                    </div>                  
+                </div>
+
+                <div id="down">
+                    <div class="acG" style="width: 50%; height: 50%; margin: 10px; background-color: white;">
+                        
+                    </div>
+                    <div class="sdG" style="width: 50%; height: 50%; margin: 10px; background-color: white;">
+                        
+                    </div>
+                </div>
+                
+            </main>
+        </section>
+    </div>
+</body>
+</html>

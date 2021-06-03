@@ -1,0 +1,179 @@
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+    $.support.cors = true;
+    $.ajax({
+        url:"http://172.30.1.6:8000/network/count/", //차트 API
+        type: "GET",
+        datatype:"json",
+        success: function(response){
+            if(response["result"] == "success"){
+                var history = response['history'];
+
+                //차트 시작시간 20시로 설정
+                var chartTime = 20;
+                
+                // //자려고 누웠을 때 뒤척임 발생하므로 첫번째 뒤척임을 수면 시작으로 한다. 
+                // var curr = new Date(history.acc[0].sleeptime);
+                // var hour = ("0"+curr.getHours()).slice(-2); //시 2자리(00-23)로 표현
+                
+                //오늘기록 객체 생성자 함수(time,acc,sound)
+                function ArrDay(time, acc, sound){
+                    this.time = time;
+                    this.acc = acc;
+                    this.sound = sound;
+                }
+
+                //객체 저장할 배열 선언, 배열안에 객체 넣고 시간 넣어두기
+                var arrDay = [];
+                for(var i=0;i<12;i++){
+                    if(chartTime==24){ chartTime==0; }
+                    arrDay[i] = new ArrDay(chartTime, 0, 0);
+                    chartTime++;
+                }
+
+                chartTime=20; 
+                for(var i=0;i<history.acc.length;i++){
+                    //json 배열에서 가져온 뒤척임 시간 2자리(00-23)로 표현
+                    var curA = new Date(history.acc[i].sleeptime);
+                    var cutA = ("0"+curA.getHours()).slice(-2);//가공된시간
+
+                    if(chartTime==cutA){
+                        if(cutA<24){ arrDay[cutA-20].acc++; }
+                        else{ arrDay[cutA+4].acc++; }
+                    } 
+                }
+
+                chartTime=20;
+                for(var i=0;i<history.sound.length;i++){
+                    //json 배열에서 가져온 코골이 시간 2자리(00-23)로 표현
+                    var curS = new Date(history.sound[i].sleeptime);
+                    var cutS = ("0"+curS.getHours()).slice(-2);//가공된시간
+
+                    if(chartTime==cutS){
+                        if((cutS >= 20)&&(cutS<24)){ arrDay[cutS-20].sound++; }
+                        else{ arrDay[cutS+4].sound++; }
+                    } 
+                }
+
+                // 구글차트 데이터테이블에 넣기
+                var data = new google.visualization.arrayToDataTable([
+                     ['시간', '뒤척임', '코골이'],
+                     [arrDay[0].time, arrDay[0].acc, arrDay[0].sound], 
+                     [arrDay[1].time, arrDay[1].acc, arrDay[1].sound], 
+                     [arrDay[2].time, arrDay[2].acc, arrDay[2].sound], 
+                     [arrDay[3].time, arrDay[3].acc, arrDay[3].sound], 
+                     [arrDay[4].time, arrDay[4].acc, arrDay[4].sound], 
+                     [arrDay[5].time, arrDay[5].acc, arrDay[5].sound], 
+                     [arrDay[6].time, arrDay[6].acc, arrDay[6].sound], 
+                     [arrDay[7].time, arrDay[7].acc, arrDay[7].sound], 
+                     [arrDay[8].time, arrDay[8].acc, arrDay[8].sound], 
+                     [arrDay[9].time, arrDay[9].acc, arrDay[9].sound], 
+                     [arrDay[10].time, arrDay[10].acc, arrDay[10].sound], 
+                     [arrDay[11].time, arrDay[11].acc, arrDay[11].sound], 
+                     [arrDay[12].time, arrDay[12].acc, arrDay[12].sound]
+                 ]);
+
+                 var options = {
+                    title: 'tonight',
+                    curveType: 'function',
+                    hAxis: {
+                       title: 'day',
+                   },
+                    //뒤척임, 코골이
+                    colors: ['#FA9F45', '#6DB0F8'],
+                    
+                    //차트 크기 설정
+                    width: 900,
+                    height: 500
+                };
+                
+                 var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                 chart.draw(data, options);
+            }
+        },
+        error:function(request,status,error){
+            alert("code:"+request.status + " message = " + request.responseText + " error = " + error);
+            var data = new google.visualization.arrayToDataTable([
+                ['시간', '뒤척임', '코골이'],
+                ['8PM', 1, 3], 
+                ['9PM', 1, 3],
+                ['10PM', 1, 3], 
+                ['11PM', 1, 3], 
+                ['12AM', 1, 2], 
+                ['1AM', 1, 2], 
+                ['2AM', 1, 2],
+                ['3AM', 1, 2],
+                ['4AM', 1, 2],
+                ['5AM', 1, 2],
+                ['6AM', 1, 2],
+                ['7AM', 1, 2],
+                ['8AM', 1, 2]
+            ]);
+
+            var options = {
+                title: 'tonight',
+                curveType: 'function',
+                //뒤척임, 코골이
+                colors: ['#FA9F45', '#6DB0F8'],
+                
+                //차트 크기 설정
+                width: 1600,
+                height: 450
+            };
+           
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    });
+}
+
+function getChart(){
+    google.charts.load("current", {package: ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+}
+
+$.ajax({
+    async: false,
+    url: "http://172.30.1.6:8000/account/signup/",
+    type: "GET",
+    datatype: "json",
+    success: function(response){
+        var str1=""; var str2="";
+        str1 += response.nickname;
+        str2 += response.birth_date;
+        
+        $(document).ready(function() {
+            $('.name').html(str1);
+            $('.birth').html(str2);
+        });
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        $(document).ready(function() {
+            $('.name').html('안신영');
+            $('.birth').html('1998.06.05');
+        });
+    }
+});
+
+
+$.ajax({
+    async: false,
+    url: "",
+    type: "GET",
+    datatype: "json",
+    success: function(response){
+        var score = response.score;
+        $(document).ready(function() {
+            $('.score_div').html(score+"점");
+        });
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        var score = 0
+        $(document).ready(function() {
+            $('.score_div').html(score+"점");
+        });
+    }
+});
+

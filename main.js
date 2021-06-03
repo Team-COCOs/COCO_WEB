@@ -13,11 +13,7 @@ function drawChart() {
 
                 //차트 시작시간 20시로 설정
                 var chartTime = 20;
-                
-                // //자려고 누웠을 때 뒤척임 발생하므로 첫번째 뒤척임을 수면 시작으로 한다. 
-                // var curr = new Date(history.acc[0].sleeptime);
-                // var hour = ("0"+curr.getHours()).slice(-2); //시 2자리(00-23)로 표현
-                
+
                 //오늘기록 객체 생성자 함수(time,acc,sound)
                 function ArrDay(time, acc, sound){
                     this.time = time;

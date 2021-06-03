@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
     $.support.cors = true;
     $.ajax({
-        url:"http://172.30.1.6:8000/network/count/", //차트 API
+        url:"http://127.0.0.1:8000/network/count/", //차트 API
         type: "GET",
         datatype:"json",
         success: function(response){
@@ -136,7 +136,7 @@ function getChart(){
 
 $.ajax({
     async: false,
-    url: "http://172.30.1.40:8000/account/signup/",
+    url: "http://127.0.0.1:8000/account/signup/",
     type: "GET",
     datatype: "json",
     success: function(response){

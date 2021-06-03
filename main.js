@@ -18,8 +18,8 @@ $.ajax({
         var cutTime;
         var curTime;
         for(var i=0; i<acc.length;i++){
-            curTime=acc.sleeptime.getHours();
-            cutTime=("0"+acc.cutTime).slice(-2);
+            curTime = new Date(acc.sleeptime);
+            cutTime=("0"+curTime).slice(-2);
             switch(cutTime){
                 case 20:
                     arrCount[0].numAcc+acc.count;

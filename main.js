@@ -132,17 +132,17 @@ function getChart(){
 
 $.ajax({
     async: false,
-    url: "http://127.0.0.1:8000/account/signup/",
-    type: "GET",
+    url: "http://127.0.0.1:8000/account/signin/",
+    type: "POST",
     datatype: "json",
+    data: {
+            "email": "abcd@gmail.com",
+            "password": "1234"
+           },
     success: function(response){
-        var str1=""; var str2="";
-        str1 += response.nickname;
-        str2 += response.birth_date;
-        
+        var nickname = response.username;
         $(document).ready(function() {
-            $('.name').html(str1);
-            $('.birth').html(str2);
+            $('.name').html(nickname);
         });
     },
     error: function(jqXHR, textStatus, errorThrown){

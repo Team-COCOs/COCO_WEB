@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 function drawChart(){
     
 // $(document).ready(function(){
@@ -164,7 +166,7 @@ function drawChart(){
         async: false
     });
 
-}
+}}
 // //구글차트 그리기
 // google.charts.load('current', {packages: ['corechart', 'line']});
 // google.charts.setOnLoadCallback(drawChart);

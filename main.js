@@ -1,3 +1,5 @@
+window.onload = function(){
+
 var arrCount = new Array(12);
 
 for(var i=0;i<13;i++){
@@ -123,7 +125,7 @@ $.ajax({
     },
     async: false
 });
-
+}
 
 
 

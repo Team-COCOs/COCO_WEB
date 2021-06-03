@@ -1,15 +1,11 @@
 var arrCount = new Array(12);
-//데이터 테이블
-var data = {
-    hour: 0,
-    numAcc: 0,
-    numSound: 0
-};
 
 for(var i=0;i<12;i++){
-    arrCount[i] = new data();
+    arrCount[i] = new Object();
     if(i<4){arrCount[i].hour=20+i;}
     else{arrCount[i].hour=i-4;}
+    arrCount[i].numAcc=0;
+    arrCount[i].numSound=0;
 }
 
 //ajax로 GET해서 값 가져와서 저장하기

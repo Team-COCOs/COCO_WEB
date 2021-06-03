@@ -30,7 +30,10 @@ function logincheck(){
             if(result == 401){
                 alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
                 return false;
-            } else {
+            } else if(result==403) {
+                alert("403 Error!");
+                return false;
+            }else {
                 window.location.href = 'https://team-cocos.github.io/COCO_WEB/index.html';
             }
         },                       

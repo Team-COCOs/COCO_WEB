@@ -13,7 +13,7 @@ function logincheck(){
     } else {
         localStorage.setItem("saveID", 'N');
     }
-
+    console.log(userID,pw);
 //     var loginData = {"email":userID, "password":pw};
 
     $.ajax({

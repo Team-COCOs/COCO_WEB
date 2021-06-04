@@ -1,5 +1,5 @@
 //구글차트 그리기
-google.charts.load('current', {packages: ['bar']});
+google.charts.load('current', {packages: ['bar','corechart']});
 google.charts.setOnLoadCallback(drawChartA);
 google.charts.setOnLoadCallback(drawChartS);
 
@@ -175,7 +175,7 @@ function drawChartS(){
 }
 
 function getChart(){
-    google.charts.load('current', {packages: ['bar']});
+    google.charts.load('current', {packages: ['bar','corechart']});
     google.charts.setOnLoadCallback(drawChartA);
     google.charts.setOnLoadCallback(drawChartS);
 }

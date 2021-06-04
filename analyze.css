@@ -78,12 +78,14 @@ main {
     display: flex;
     flex-direction: column;
     background-color: white;
+    margine: 10px;
 }
 
 .sdG{
     display: flex;
     flex-direction: column;
     background-color: white;
+    margine: 10px;
 }
 
 li a {

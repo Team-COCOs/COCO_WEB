@@ -61,7 +61,8 @@ $(document).ready(function(){
                     countA[11].count+=acc[i].count;
                 }else if(cutTime=='08'){
                     countA[12].count+=acc[i].count;
-                }               
+                }
+                console.log("acc ok");
             }
         },
         error: function(jqXHR, textStatus, errorThrown){
@@ -108,7 +109,8 @@ $(document).ready(function(){
                     countS[11].count+=sound[i].count;
                 }else if(cutTime=='08'){
                     countS[12].count+=sound[i].count;
-                }               
+                }
+                console.log("snd ok");
             }
         },
         error: function(jqXHR, textStatus, errorThrown){
@@ -144,7 +146,7 @@ function drawChartA(){
     };
 
     var chart = new google.charts.Bar(document.getElementById('acG'));
-    chart.draw(data1, options1);
+    chart.draw(data1, google.charts.Bar.convertOptions(options2));
 }
 
 function drawChartS(){
@@ -171,13 +173,7 @@ function drawChartS(){
     };
 
     var chart = new google.charts.Bar(document.getElementById('sdG'));
-    chart.draw(data2, options2);
-}
-
-function getChart(){
-    google.charts.load('current', {packages: ['bar']});
-    google.charts.setOnLoadCallback(drawChartA);
-    google.charts.setOnLoadCallback(drawChartS);
+    chart.draw(data2, google.charts.Bar.convertOptions(options2));
 }
 
 

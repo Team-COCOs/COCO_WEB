@@ -63,7 +63,13 @@ $(document).ready(function(){
                     countA[12].count+=acc[i].count;
                 }               
             }
-        }
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            for(var i=0;i<13;i++){
+                countA[i].count = i;
+            }
+        },
+        async: false
     });
     //코골이 횟수 GET
     $.ajax({
@@ -104,7 +110,13 @@ $(document).ready(function(){
                     countS[12].count+=sound[i].count;
                 }               
             }
-        }
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            for(var i=0;i<13;i++){
+                countS[i].count = i;
+            }
+        },
+        async: false
     });
 
 });
@@ -159,7 +171,7 @@ function drawChartS(){
         colors: '#6DB0F8'
     };
 
-    var chart = new google.visualization.BarChart(document.getElementById('sdG'));
+    var chart = new google.visualization.BarChart(document.getElementById('acG'));
     chart.draw(data2, options2);
 }
 

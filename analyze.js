@@ -1,10 +1,10 @@
 //구글차트 그리기
-google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.load('current', {packages: ['bar']});
 google.charts.setOnLoadCallback(drawChartA);
 google.charts.setOnLoadCallback(drawChartS);
 
-var countA = new Array(12);
-var countS = new Array(12);
+var countA = new Array(13);
+var countS = new Array(13);
 
 //배열 초기화
 for(var i=0;i<13;i++){
@@ -118,7 +118,6 @@ $(document).ready(function(){
         },
         async: false
     });
-
 });
 
 function drawChartA(){
@@ -176,7 +175,7 @@ function drawChartS(){
 }
 
 function getChart(){
-    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.load('current', {packages: ['bar']});
     google.charts.setOnLoadCallback(drawChartA);
     google.charts.setOnLoadCallback(drawChartS);
 }

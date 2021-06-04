@@ -15,7 +15,7 @@ for(var i=0;i<13;i++){
 $(document).ready(function(){
     //ajax로 GET해서 값 가져와서 저장하기
     $.ajax({
-        url: "http:/114.71.220.72:8000/network/count/",
+        url: "http://127.0.0.1:8000/network/count/",
         type: "GET",
         datatype: "json",
         success: function(response){
@@ -134,7 +134,7 @@ function getChart(){
 
 $.ajax({
     async: false,
-    url: "http://114.71.220.72:8000/account/signin/",
+    url: "http://127.0.0.1:8000/account/signin/",
     type: "POST",
     datatype: "json",
     data: {
@@ -160,7 +160,7 @@ $.ajax({
 
 $.ajax({
     async: false,
-    url: "http://114.71.220.72:8000/network/score/",
+    url: "http://127.0.0.1:8000/network/score/",
     type: "GET",
     datatype: "json",
     success: function(response){

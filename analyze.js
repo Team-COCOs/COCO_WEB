@@ -159,7 +159,7 @@ function drawChartS(){
         colors: '#6DB0F8'
     };
 
-    var chart = new google.visualization.BarChart(document.getElementById('acG'));
+    var chart = new google.visualization.BarChart(document.getElementById('sdG'));
     chart.draw(data2, options2);
 }
 

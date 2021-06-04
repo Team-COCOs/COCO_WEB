@@ -1,5 +1,5 @@
 //구글차트 그리기
-google.charts.load('current', {packages: ['bar']});
+google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawChartA);
 google.charts.setOnLoadCallback(drawChartS);
 
@@ -121,10 +121,8 @@ $(document).ready(function(){
 });
 
 function drawChartA(){
-    var data1 = new google.visualization.arrayToDataTable();
-    data1.addColumm('string','시간');
-    data1.addColumm('number', 발생횟수);
-    data1.addRows([
+    var data1 = new google.visualization.arrayToDataTable([
+        ['hour', 'count'],
         [String(countA[0].hour), countA[0].count],
         [String(countA[1].hour), countA[1].count],
         [String(countA[2].hour), countA[2].count],
@@ -145,15 +143,13 @@ function drawChartA(){
         colors: '#FA9F45'
     };
 
-    var chart = new google.visualization.BarChart(document.getElementById('acG'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('acG'));
     chart.draw(data1, options1);
 }
 
 function drawChartS(){
-    var data2 = new google.visualization.arrayToDataTable();
-    data2.addColumm('string','시간');
-    data2.addColumm('number', 발생횟수);
-    data2.addRows([
+    var data2 = new google.visualization.arrayToDataTable([
+        ['hour', 'count'],
         [String(countS[0].hour), countS[0].count],
         [String(countS[1].hour), countS[1].count],
         [String(countS[2].hour), countS[2].count],
@@ -174,7 +170,7 @@ function drawChartS(){
         colors: '#6DB0F8'
     };
 
-    var chart = new google.visualization.BarChart(document.getElementById('sdG'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('sdG'));
     chart.draw(data2, options2);
 }
 

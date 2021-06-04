@@ -175,7 +175,7 @@ function drawChartS(){
 }
 
 function getChart(){
-    google.charts.load('current', {packages: ['bar']});
+    google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(drawChartA);
     google.charts.setOnLoadCallback(drawChartS);
 }

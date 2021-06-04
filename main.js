@@ -160,7 +160,7 @@ $.ajax({
 
 $.ajax({
     async: false,
-    url: "",
+    url: "http://114.71.220.72:8000/network/score/",
     type: "GET",
     datatype: "json",
     success: function(response){

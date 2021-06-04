@@ -1,186 +1,191 @@
-google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawChart);
+//구글차트 그리기
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawChartA);
+google.charts.setOnLoadCallback(drawChartS);
 
-function drawChart() {
+var countA = new Array(12);
+var countS = new Array(12);
+
+//배열 초기화
+for(var i=0;i<13;i++){
+    countA[i] = new Object();
+    countS[i] = new Object();
+
+    if(i<4){
+        countA[i].hour=20+i;
+        countS[i].hour=20+i;
+    }
+    else{
+        countA[i].hour=i-4;
+        countS[i].hour=i-4;
+    }
+    countA[i].count=0;
+    countS[i].count=0;
+}
+
+$(document).ready(function(){
+    //뒤척임 횟수 GET
     $.ajax({
-        url:"http://114.71.220.72:8000/network/sound/count/", //코골이차트 API
+        url: "http://127.0.0.1:8000/network/acc/count/",
         type: "GET",
-        datatype:"json",
+        datatype: "json",
         success: function(response){
-            if(response["result"] == "success"){
-                var history = response['history'];
-
-                //차트 시작시간 20시로 설정
-                var chartTime = 20;
-
-                //오늘기록 객체 생성자 함수(time,count)
-                function ArrDay(time, count){
-                    this.time = time;
-                    this.count = count;
-                }
-
-                //객체 저장할 배열 선언, 배열안에 객체 넣고 시간 넣어두기
-                var arrDay = [];
-                for(var i=0;i<12;i++){
-                    if(chartTime==24){ chartTime==0; }
-                    arrDay[i] = new ArrDay(chartTime, 0);
-                    chartTime++;
-                }
-
-                chartTime=20; 
-                for(var i=0;i<history.length;i++){
-                    //json 배열에서 가져온 뒤척임 시간 2자리(00-23)로 표현
-                    var count = new Date(history[i].sleeptime);
-                    var cutA = ("0"+curA.getHours()).slice(-2);//가공된시간
-
-                    if(chartTime==cutA){
-                        if(cutA<24){ arrDay[cutA-20].acc++; }
-                        else{ arrDay[cutA+4].acc++; }
-                    } 
-                }
-
-                // 구글차트 데이터테이블에 넣기
-                var data = new google.visualization.arrayToDataTable([
-                     ['시간', '뒤척임', '코골이'],
-                     [arrDay[0].time, arrDay[0].acc], 
-                     [arrDay[1].time, arrDay[1].acc], 
-                     [arrDay[2].time, arrDay[2].acc], 
-                     [arrDay[3].time, arrDay[3].acc], 
-                     [arrDay[4].time, arrDay[4].acc], 
-                     [arrDay[5].time, arrDay[5].acc], 
-                     [arrDay[6].time, arrDay[6].acc], 
-                     [arrDay[7].time, arrDay[7].acc], 
-                     [arrDay[8].time, arrDay[8].acc], 
-                     [arrDay[9].time, arrDay[9].acc], 
-                     [arrDay[10].time, arrDay[10].acc], 
-                     [arrDay[11].time, arrDay[11].acc], 
-                     [arrDay[12].time, arrDay[12].acc]
-                 ]);
-
-                 var options = {
-                    title: 'tonight',
-                    curveType: 'function',
-                    hAxis: {
-                       title: 'day',
-                   },
-                    //뒤척임, 코골이
-                    colors: '#FA9F45',
-                    
-                    //차트 크기 설정
-                    width: 900,
-                    height: 500
-                };
-                
-                var obj = document.getElementById('.acG');
-                var chart = new google.visualization.ColumnChart(obj);
-                chart.draw(data, options);
+            var acc = response;
+            var curTime; var cutTime;
+            for(var i=0; i<acc.length;i++){
+                curTime = acc[i].sleeptime;
+                cutTime = curTime.substring(11, 13);
+                if(cutTime=='20'){
+                    countA[0].count+=acc[i].count;
+                }else if(cutTime=='21'){
+                    countA[1].count+=acc[i].count;
+                }else if(cutTime=='22'){
+                    countA[2].count+=acc[i].count;
+                }else if(cutTime=='23'){
+                    countA[3].count+=acc[i].count;
+                }else if(cutTime=='00'){
+                    countA[4].count+=acc[i].count;
+                }else if(cutTime=='01'){
+                    countA[5].count+=acc[i].count;
+                }else if(cutTime=='02'){
+                    countA[6].count+=acc[i].count;
+                }else if(cutTime=='03'){
+                    countA[7].count+=acc[i].count;
+                }else if(cutTime=='04'){
+                    countA[8].count+=acc[i].count;
+                }else if(cutTime=='05'){
+                    countA[9].count+=acc[i].count;
+                }else if(cutTime=='06'){
+                    countA[10].count+=acc[i].count;
+                }else if(cutTime=='07'){
+                    countA[11].count+=acc[i].count;
+                }else if(cutTime=='08'){
+                    countA[12].count+=acc[i].count;
+                }               
             }
-        },
-        error:function(error){
-            var data = new google.visualization.arrayToDataTable([
-                ['시간', '뒤척임'],
-                ['8PM', 1], 
-                ['9PM', 1],
-                ['10PM', 3], 
-                ['11PM', 3], 
-                ['12AM', 2], 
-                ['1AM', 2], 
-                ['2AM', 1],
-                ['3AM', 2],
-                ['4AM', 2],
-                ['5AM', 1],
-                ['6AM', 1],
-                ['7AM', 1],
-                ['8AM', 2]
-            ]);
-
-            var options = {
-                title: 'tonight',
-                curveType: 'function',
-                //뒤척임, 코골이
-                colors: ['#FA9F45', '#6DB0F8'],
-                
-                //차트 크기 설정
-                width: 500,
-                height: 500
-            };
-           
-            var obj = document.getElementById('.acG');
-            var chart = new google.visualization.ColumnChart(obj);
-            chart.draw(data, options);
         }
     });
+    //코골이 횟수 GET
+    $.ajax({
+        url: "http://127.0.0.1:8000/network/sound/count/",
+        type: "GET",
+        datatype: "json",
+        success: function(response){
+            var sound = response;
+            var curTime; var cutTime;
+            for(var i=0; i<sound.length;i++){
+                curTime = sound[i].sleeptime;
+                cutTime = curTime.substring(11, 13);
+                if(cutTime=='20'){
+                    countS[0].count+=sound[i].count;
+                }else if(cutTime=='21'){
+                    countS[1].count+=sound[i].count;
+                }else if(cutTime=='22'){
+                    countS[2].count+=sound[i].count;
+                }else if(cutTime=='23'){
+                    countS[3].count+=sound[i].count;
+                }else if(cutTime=='00'){
+                    countS[4].count+=sound[i].count;
+                }else if(cutTime=='01'){
+                    countS[5].count+=sound[i].count;
+                }else if(cutTime=='02'){
+                    countS[6].count+=sound[i].count;
+                }else if(cutTime=='03'){
+                    countS[7].count+=sound[i].count;
+                }else if(cutTime=='04'){
+                    countS[8].count+=sound[i].count;
+                }else if(cutTime=='05'){
+                    countS[9].count+=sound[i].count;
+                }else if(cutTime=='06'){
+                    countS[10].count+=sound[i].count;
+                }else if(cutTime=='07'){
+                    countS[11].count+=sound[i].count;
+                }else if(cutTime=='08'){
+                    countS[12].count+=sound[i].count;
+                }               
+            }
+        }
+    });
+
+});
+
+function drawChartA(){
+    var data1 = new google.visualization.arrayToDataTable([
+        ['hour', 'count'],
+        [String(countA[0].hour), countA[0].count],
+        [String(countA[1].hour), countA[1].count],
+        [String(countA[2].hour), countA[2].count],
+        [String(countA[3].hour), countA[3].count],
+        [String(countA[4].hour), countA[4].count],
+        [String(countA[5].hour), countA[5].count],
+        [String(countA[6].hour), countA[6].count],
+        [String(countA[7].hour), countA[7].count],
+        [String(countA[8].hour), countA[8].count],
+        [String(countA[9].hour), countA[9].count],
+        [String(countA[10].hour), countA[10].count],
+        [String(countA[11].hour), countA[11].count],
+        [String(countA[12].hour), countA[12].count]
+    ]);
+
+    var options1 = {
+        title: '뒤척임',
+        colors: '#FA9F45'
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('acG'));
+    chart.draw(data1, options1);
+}
+
+function drawChartS(){
+    var data2 = new google.visualization.arrayToDataTable([
+        ['hour', 'count'],
+        [String(countS[0].hour), countS[0].count],
+        [String(countS[1].hour), countS[1].count],
+        [String(countS[2].hour), countS[2].count],
+        [String(countS[3].hour), countS[3].count],
+        [String(countS[4].hour), countS[4].count],
+        [String(countS[5].hour), countS[5].count],
+        [String(countS[6].hour), countS[6].count],
+        [String(countS[7].hour), countS[7].count],
+        [String(countS[8].hour), countS[8].count],
+        [String(countS[9].hour), countS[9].count],
+        [String(countS[10].hour), countS[10].count],
+        [String(countS[11].hour), countS[11].count],
+        [String(countS[12].hour), countS[12].count]
+    ]);
+
+    var options2 = {
+        title: '코골이',
+        colors: '#6DB0F8'
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('acG'));
+    chart.draw(data2, options2);
 }
 
 function getChart(){
-    google.charts.load("current", {package: ["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawChartA);
+    google.charts.setOnLoadCallback(drawChartS);
 }
 
-$.ajax({
-    async: false,
-    url: "http://114.71.220.72:8000/account/signup/",
-    type: "GET",
-    datatype: "json",
-    success: function(response){
-        var str1=""; var str2="";
-        str1 += response.nickname;
-        str2 += response.birth_date;
-        
-        $(document).ready(function() {
-            $('.name').html(str1);
-            $('.birth').html(str2);
-        });
-    },
-    error: function(jqXHR, textStatus, errorThrown){
-        $(document).ready(function() {
-            $('.name').html('안신영');
-            $('.birth').html('1998.06.05');
-        });
-    }
-});
 
+//수면점수
 $.ajax({
-    async: false,
-    url: "http://114.71.220.72:8000/network/score/",
+    url: "http://127.0.0.1:8000/network/score/",
     type: "GET",
     datatype: "json",
     success: function(response){
-        //response.score에서 score은 API 형태 보고 변경 필요
         var score = response.score;
-        
         $(document).ready(function() {
             $('.score').html(score+"점");
-
-            if(score<40){
-                $('.comment').html("괜찮으세요? 솔루션이 시급해요.");
-            } else if((score>=40)&&(score<60)){
-                $('.comment').html("솔루션이 필요해보여요.");
-            } else if((score>=60)&&(score<80)){
-                $('.comment').html("조금만 더 노력해볼까요?");
-            } else if((score>=80)&&(score<100)){
-                $('.comment').html("잘하고 있어요!");
-            } else if(score==100){
-                $('.comment').html("완벽합니다! 잘 하고 있어요~");
-            }
         });
     },
     error: function(jqXHR, textStatus, errorThrown){
-        var score = 100;
+        var score=0;
         $(document).ready(function() {
             $('.score').html(score+"점");
-
-            if(score<40){
-                $('.comment').html("괜찮으세요? 솔루션이 시급해요.");
-            } else if((score>=40)&&(score<60)){
-                $('.comment').html("솔루션이 필요해보여요.");
-            } else if((score>=60)&&(score<80)){
-                $('.comment').html("조금만 더 노력해볼까요?");
-            } else if((score>=80)&&(score<100)){
-                $('.comment').html("잘하고 있어요!");
-            } else if(score==100){
-                $('.comment').html("완벽합니다! 잘 하고 있어요~");
-            }
         });
     }
 });
+

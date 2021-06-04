@@ -123,7 +123,7 @@ $(document).ready(function(){
 });
 
 function drawChartA(){
-    var data2 = new google.visualization.arrayToDataTable([
+    var data1 = new google.visualization.arrayToDataTable([
         ['hour', 'count'],
         [String(countA[0].hour), countA[0].count],
         [String(countA[1].hour), countA[1].count],
@@ -142,11 +142,11 @@ function drawChartA(){
 
     var options1 = {
         title: '뒤척임',
-        colors: '#FA9F49'
+        colors: '#FA9F45'
     };
 
     var chart = new google.charts.Bar(document.getElementById('acG'));
-    chart.draw(data2, google.charts.Bar.convertOptions(options1));
+    chart.draw(data1, google.charts.Bar.convertOptions(options1));
 }
 
 function drawChartS(){
@@ -195,3 +195,4 @@ $.ajax({
         });
     }
 });
+

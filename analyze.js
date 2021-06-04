@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
     $.ajax({
-        url:"http://127.0.0.1:8000/network/sound/count/", //코골이차트 API
+        url:"http://114.71.220.72:8000/network/sound/count/", //코골이차트 API
         type: "GET",
         datatype:"json",
         success: function(response){
@@ -119,7 +119,7 @@ function getChart(){
 
 $.ajax({
     async: false,
-    url: "http://127.0.0.1:8000/account/signup/",
+    url: "http://114.71.220.72:8000/account/signup/",
     type: "GET",
     datatype: "json",
     success: function(response){
@@ -142,7 +142,7 @@ $.ajax({
 
 $.ajax({
     async: false,
-    url: "",
+    url: "http://114.71.220.72:8000/network/score/",
     type: "GET",
     datatype: "json",
     success: function(response){

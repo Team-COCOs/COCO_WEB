@@ -1,5 +1,5 @@
 //구글차트 그리기
-google.charts.load('current', {packages: ['corechart']});
+google.charts.load('current', {packages: ['bar']});
 google.charts.setOnLoadCallback(drawChartA);
 google.charts.setOnLoadCallback(drawChartS);
 
@@ -143,7 +143,7 @@ function drawChartA(){
         colors: '#FA9F45'
     };
 
-    var chart = new google.visualization.ColumnChart(document.getElementById('acG'));
+    var chart = new google.charts.Bar(document.getElementById('acG'));
     chart.draw(data1, options1);
 }
 
@@ -170,12 +170,12 @@ function drawChartS(){
         colors: '#6DB0F8'
     };
 
-    var chart = new google.visualization.ColumnChart(document.getElementById('sdG'));
+    var chart = new google.charts.Bar(document.getElementById('sdG'));
     chart.draw(data2, options2);
 }
 
 function getChart(){
-    google.charts.load('current', {packages: ['corechart']});
+    google.charts.load('current', {packages: ['bar']});
     google.charts.setOnLoadCallback(drawChartA);
     google.charts.setOnLoadCallback(drawChartS);
 }

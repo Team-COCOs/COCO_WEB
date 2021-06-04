@@ -146,7 +146,7 @@ function drawChartA(){
     };
 
     var chart = new google.charts.Bar(document.getElementById('acG'));
-    chart.draw(data1, google.charts.Bar.convertOptions(options2));
+    chart.draw(data1, google.charts.Bar.convertOptions(options1));
 }
 
 function drawChartS(){

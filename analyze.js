@@ -140,13 +140,13 @@ function drawChartA(){
         [String(countA[12].hour), countA[12].count]
     ]);
 
-    var options2 = {
+    var options1 = {
         title: '뒤척임',
         colors: '#FA9F49'
     };
 
-    var chart = new google.charts.Bar(document.getElementById('sdG'));
-    chart.draw(data2, google.charts.Bar.convertOptions(options2));
+    var chart = new google.charts.Bar(document.getElementById('acG'));
+    chart.draw(data2, google.charts.Bar.convertOptions(options1));
 }
 
 function drawChartS(){

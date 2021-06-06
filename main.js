@@ -2,6 +2,7 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawChart);
 
+
 var arrCount = new Array(12);
 
 for(var i=0;i<13;i++){
@@ -120,6 +121,7 @@ function drawChart(){
         title: 'tonight',
         curveType: 'function',
         colors: ['#FA9F45', '#6DB0F8'],
+        height: 400
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));

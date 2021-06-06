@@ -17,70 +17,67 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    
-    <div class="wrapper">
-        <header><h1>coco</h1></header>
-        
-        <section>
-            <nav>
-                <div id="profile">
-                <center>
-                    <img class="face" src="pic/grandmom.png">
-                    <div class="name"></div>
-                    <div class="birth"></div>
-                </center>
+<body class="viewbox">
+    <header><h1>coco</h1></header>
+    <div class="coco_body">
+        <div class="coco_nav">
+            <div id="profile">
+            <center>
+                <img class="face" src="pic/grandmom.png">
+                <div class="name"></div>
+                <div class="birth"></div>
+            </center>
+            </div>
+
+            <div id="menu">
+                <ul>
+                    <center>
+                    <li><a class="active" href="index.html"><h2>한눈에 보기</h2></a></li>
+                    <li><a href="analyze.html"><h2>수면분석</h2></a></li>
+                    <li><a href="set.html"><h2>설정하기</h2></a></li>
+                    <li><a href="login.html"><h2>로그아웃</h2></a></li>
+                    </center>
+                </ul>
+            </div>
+        </div>
+
+        <div class="coco_content">
+            <div id="up">
+                <div id="chart_div"></div>
+            </div>
+
+            <div id="down">
+                <div id="score_box">
+                    <center>
+                            <h2>수면점수</h2>
+                        <div class="score_div"></div>
+                    </center>
                 </div>
 
-                <div id="menu">
-                    <ul>
+                <div class="notice"> 
+                    <div id="notice_box">
                         <center>
-                        <li><a class="active" href="index.html"><h2>한눈에 보기</h2></a></li>
-                        <li><a href="analyze.html"><h2>수면분석</h2></a></li>
-                        <li><a href="set.html"><h2>설정하기</h2></a></li>
-                        <li><a href="login.html"><h2>로그아웃</h2></a></li>
-                        </center>
-                    </ul>
-                </div>
-            </nav>
-
-            <main>
-                <div id="up">
-                    <div id="chart_div" style="width: 900px; height: 500px; margin: 10px;"></div>
-                </div>
-
-                <div id="down">
-                    <div id="score_box">
-                        <center>
-                             <h2>수면점수</h2>
-                            <div class="score_div"></div>
+                            <h2>알림</h2>
+                            <ul>
+                                <li><a href="analyze.html">윤금자 할머니의 문의글에 답변이 달렸어요!</a></li>
+                                <li><a href="inquire.html">월간 건강레터</a></li>
+                            </ul>
                         </center>
                     </div>
-
-                    <div class="notice"> 
-                        <div id="notice_box">
-                            <center>
-                                <h2>알림</h2>
-                                <ul>
-                                    <li><a href="analyze.html">윤금자 할머니의 문의글에 답변이 달렸어요!</a></li>
-                                    <li><a href="inquire.html">월간 건강레터</a></li>
-                                </ul>
-                            </center>
-                        </div>
-                        <div id="letter_box">
-                            <center>
-                                <h2>수면상식</h2>
-                                <ul>
-                                    <li><a href="dummy1.html">커피와 담배는 수면에 악영향을 준다</a></li>
-                                    <li><a href="dummy2.html">수면을 취하고 싶다면 형광등을 꺼야 한다</a></li> 
-                                </ul>
-                            </center>
-                        </div>
+                    <div id="letter_box">
+                        <center>
+                            <h2>수면상식</h2>
+                            <ul>
+                                <li><a href="dummy1.html">커피와 담배는 수면에 악영향을 준다</a></li>
+                                <li><a href="dummy2.html">수면을 취하고 싶다면 형광등을 꺼야 한다</a></li> 
+                            </ul>
+                        </center>
                     </div>
                 </div>
-                
-            </main>
-        </section>
+            </div>
+            
+        </div>
     </div>
+
 </body>
 </html>

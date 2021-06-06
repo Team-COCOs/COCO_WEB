@@ -90,10 +90,23 @@ $(document).ready(function(){
             }
         },
         error: function(jqXHR, textStatus, errorThrown){
-            for(var i=0;i<13;i++){
-                arrCount[i].numAcc = i;
-                arrCount[i].numSound = i+1;
-            }
+//             for(var i=0;i<13;i++){
+//                 arrCount[i].numAcc = i;
+//                 arrCount[i].numSound = i+1;
+//             }
+            arrCount[0].numAcc = 0; arrCount[0].numSound = 0;
+            arrCount[1].numAcc = 3; arrCount[1].numSound = 2;
+            arrCount[2].numAcc = 4; arrCount[2].numSound = 4;
+            arrCount[3].numAcc = 1; arrCount[3].numSound = 4;
+            arrCount[4].numAcc = 1; arrCount[4].numSound = 3;
+            arrCount[5].numAcc = 7; arrCount[5].numSound = 0;
+            arrCount[6].numAcc = 0; arrCount[6].numSound = 2;
+            arrCount[7].numAcc = 1; arrCount[7].numSound = 1;
+            arrCount[8].numAcc = 2; arrCount[8].numSound = 0;
+            arrCount[9].numAcc = 0; arrCount[9].numSound = 0;
+            arrCount[10].numAcc = 0; arrCount[10].numSound = 1;
+            arrCount[11].numAcc = 3; arrCount[11].numSound = 0;
+            arrCount[12].numAcc = 5; arrCount[12].numSound = 0;
         },
         async: false
     })
